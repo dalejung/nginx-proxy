@@ -30,5 +30,8 @@ ENV DOCKER_HOST unix:///tmp/docker.sock
 
 VOLUME ["/etc/nginx/certs"]
 
+RUN mkdir /etc/nginx/custom
+VOLUME ["/etc/nginx/custom"]
+
 ENTRYPOINT ["/app/docker-entrypoint.sh"]
 CMD ["forego", "start", "-r"]
